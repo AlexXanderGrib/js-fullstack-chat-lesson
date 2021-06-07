@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Чатик</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" async defer></script>
+  </head>
+  <body>
+    <div class="chat">
+      <div class="chat__header">
+        <h1 class="chat__title">Чатик</h1>
+        <div class="chat__settings form">
+          <form class="form__field">
+            <span class="form__label">Ник</span>
+            <input
+              type="text"
+              class="form__input"
+              minlength="2"
+              maxlength="32"
+              placeholder="Мамонтизатор 5000"
+              autocomplete="nickname"
+              data-persistent="nickname"
+            />
+          </form>
+        </div>
+      </div>
+      <div class="chat__messages">
+        <ul class="chat__messages-list">
+          <template id="message__template">
+            <li class="chat__messages-list-item">
+              <article class="message">
+                <span class="message-ava">👤</span>
+                <h5 class="message-sender">{{sender}}</h5>
+                <pre class="message-content">{{content}}</pre>
+                <div class="message-spacer"></div>
+                <time class="message-date">{{date}}</time>
+              </article>
+            </li>
+          </template>
+        </ul>
+      </div>
+      <form class="chat__form form">
+        <label class="form__field">
+          <span class="form__label">Сообщение</span>
+          <textarea
+            class="form__input chat__input"
+            placeholder="Сообщение..."
+            maxlength="128"
+            minlength="1"
+            required
+          ></textarea>
+        </label>
+        <div class="chat__send-button-wrapper">
+          <button class="chat__send-button" type="submit">🚀</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
